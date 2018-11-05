@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
+    "react-less-watcher": "^1.1.4",
     "react-scripts": "2.1.1"
   },
   "husky": {
@@ -14,10 +15,11 @@
     }
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start && npm run watch-less",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "watch-less": "react-less-watcher -d src/less"
   },
   "eslintConfig": {
     "extends": "react-app"
