@@ -1,0 +1,4 @@
+1. I've used a boilerplate to facilitate start point;
+2. I've added a `.editorconfig` to leave the project code standard independently of IDE and SO;
+3. For git messages, I like to use `HUSKY` to enforce a policy to keep messages clean and tidy;
+4.
