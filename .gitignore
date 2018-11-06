@@ -11,6 +11,9 @@
 # production
 /build
 
+# sass cache
+.sass-cache
+
 # misc
 .DS_Store
 .env

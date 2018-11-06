@@ -1,0 +1,15 @@
+@import "./Global.scss";
+
+body {
+  font-family: $font-family;
+}
+
+header {
+  padding: 15px 10px;
+  background-color: $gray-color;
+}
+
+h2 {
+  color: $primary-color;
+  margin: 0;
+}

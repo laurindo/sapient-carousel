@@ -16,11 +16,11 @@
     }
   },
   "scripts": {
-    "start": "react-scripts start && npm run watch-less",
-    "build": "react-scripts build",
+    "start": "react-scripts start",
+    "build": "sass src/styles/scss:src/styles/css && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "watch-less": "react-less-watcher -d src/less"
+    "sass": "sass --watch src/styles/scss:src/styles/css"
   },
   "eslintConfig": {
     "extends": "react-app"

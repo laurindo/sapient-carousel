@@ -1,21 +1,30 @@
 import React from 'react';
 import HttpUtil from '../utils/http-util';
+import CarouselUtil from '../utils/carousel-util';
+import CarouselItem from './CarouselItem';
 
 export default class Carousel extends React.Component {
-  constructor() {
+  constructor(props) {
+    super();
+    this.CarouselUtil = new CarouselUtil();
     this.HttpUtil = new HttpUtil();
     this.state = {
-      images: []
+      images: null,
+      sizeItems: 0,
+      showError: false
     };
   }
 
   componentDidMount() {
-    this.HttpUtil.getImages().then(result => {
+    this.HttpUtil.getImages(this.props.queryImages).then(result => {
       this.setState({
-        images: result
+        images: result.data,
+        showError: false
       });
     }).catch(error => {
-      console.log(error);
+      this.setState({
+        showError: true
+      });
     });
   }
 
@@ -24,29 +33,12 @@ export default class Carousel extends React.Component {
       <div>
         <div className='wrap'>
           <ul className='carousel is-set'>
-            <li className='carousel-seat'>
-              <h2>1</h2>
-            </li>
-            <li className='carousel-seat'>
-              <h2>2</h2>
-            </li>
-            <li className='carousel-seat'>
-              <h2>3</h2>
-            </li>
-            <li className='carousel-seat'>
-              <h2>4</h2>
-            </li>
-            <li className='carousel-seat'>
-              <h2>5</h2>
-            </li>
-            <li className='carousel-seat is-ref'>
-              <h2>6</h2>
-            </li>
+            <CarouselItem images={this.state.images} />
           </ul>
         </div>
         <div className='controls'>
-          <button className='toggle'>Prev</button>
-          <button className='toggle' data-toggle='next'>Next</button>
+          <button className='toggle prev'>Prev</button>
+          <button className='toggle next' data-toggle='next'>Next</button>
         </div>
       </div>
     )

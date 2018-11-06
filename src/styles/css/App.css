@@ -1,0 +1,17 @@
+/* FONT FAMILY */
+/* COLORS */
+body {
+  font-family: "Ropa Sans", sans-serif;
+}
+
+header {
+  padding: 15px 10px;
+  background-color: #e9eee6;
+}
+
+h2 {
+  color: #069;
+  margin: 0;
+}
+
+/*# sourceMappingURL=App.css.map */
