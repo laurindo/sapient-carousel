@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const LeftButton = (props) => {
   return (
@@ -6,6 +7,14 @@ const LeftButton = (props) => {
       {props.title}
     </button>
   );
+};
+
+LeftButton.propType = {
+  title: PropTypes.string
+};
+
+LeftButton.defaultProps =  {
+  title: "Prev"
 };
 
 export default LeftButton;

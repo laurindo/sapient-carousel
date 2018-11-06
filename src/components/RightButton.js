@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const RightButton = (props) => {
   return (
@@ -6,6 +7,14 @@ const RightButton = (props) => {
       {props.title}
     </button>
   );
+};
+
+RightButton.propType = {
+  title: PropTypes.string
+};
+
+RightButton.defaultProps =  {
+  title: "Next"
 };
 
 export default RightButton;
