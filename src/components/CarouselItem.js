@@ -2,17 +2,14 @@ import React from 'react';
 
 export default class CarouselItem extends React.Component {
   renderImages() {
-    if (this.props.images && this.props.images.hits) {
-      return this.props.images.hits.map((image, index) => {
-        return (
-          <li key={image.id} className='carousel-seat'>
-            <div className="details">
-              <img src={image.previewURL} alt={image.tags} />
-              <p>{image.tags}</p>
-            </div>
-          </li>
-        );
-      });
+    const currentImage = this.props.image;
+    if (currentImage) {
+      return (
+        <div className="details">
+          <img src={currentImage.previewURL} alt={currentImage.tags} />
+          <p>{currentImage.tags}</p>
+        </div>
+      );
     }
     return <li className='loading'>loading...</li>
   }

@@ -11,61 +11,70 @@ export default class Carousel extends React.Component {
     this.CarouselUtil = new CarouselUtil();
     this.HttpUtil = new HttpUtil();
     this.state = {
-      images: null,
-      left: '-100px',
-      sizeItems: 0,
-      translateValue: 0,
-      currentIndex: 0,
-      showError: false
+      images: [],
+      currentImage: null,
+      showError: false,
+      indexImage: 0
     };
   }
 
   componentDidMount() {
-    this.HttpUtil.getImages(this.props.queryImages).then(result => {
-      this.setState({
-        images: result.data,
-        sizeItems: result.data.hits.length,
-        showError: false
+    try {
+      this.HttpUtil.getImages(this.props.queryImages).then(result => {
+        this.setState({
+          images: result.data.hits,
+          currentImage: result.data.hits[0],
+          showError: false
+        });
+      }).catch(error => {
+        this.setState({
+          showError: true
+        });
       });
-    }).catch(error => {
+    } catch (error) {
       this.setState({
         showError: true
       });
+    }
+  }
+
+  goToNextSlide() {
+    const newIndex = this.state.indexImage + 1;
+    this.setState({
+      indexImage: newIndex,
+      currentImage: this.state.images[newIndex]
     });
   }
 
-  goToPrevSlide() {}
-
-  goToNextSlide() {
-    if (this.state.currentIndex > this.state.sizeItems) {
-      return this.setState({
-        currentIndex: 0,
-        translateValue: 0
-      });
-    }
-
-    this.setState(prevState => ({
-      left: '-200px',
-      currentIndex: prevState.currentIndex + 1,
-      translateValue: prevState.translateValue + -(this.slideWidth())
-    }));
-  }
-
-  slideWidth() {
-    return document.querySelector('.carousel').clientWidth;
+  goToPrevSlide() {
+    const newIndex = this.state.indexImage - 1;
+    this.setState({
+      indexImage: newIndex,
+      currentImage: this.state.images[newIndex]
+    });
   }
 
   render () {
+    const { images, currentImage, indexImage } = this.state;
     return (
       <div>
-        <div className='wrap'>
-          <ul className='carousel is-set' style={{ 'left': `${this.state.left}`, 'transition': 'transform ease-out 0.45s' }}>
-            <CarouselItem images={this.state.images} />
-          </ul>
+
+        <div id={`wrap-${indexImage}`} className='carousel-container'>
+          <div className="carousel-wrapper">
+            <CarouselItem image={currentImage} />
+          </div>
         </div>
+
         <div className='controls'>
-          <LeftButton title="Prev" goToPrevSlide={() => this.goToPrevSlide() } />
-          <RightButton title="Next" goToNextSlide={() => this.goToNextSlide()} />
+          <LeftButton
+            title="Prev"
+            disabled={indexImage === 0}
+            goToPrevSlide={() => this.goToPrevSlide() } />
+
+          <RightButton
+            title="Next"
+            disabled={indexImage === images.length-1}
+            goToNextSlide={() => this.goToNextSlide(indexImage)} />
         </div>
       </div>
     )
