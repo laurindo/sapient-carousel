@@ -6,8 +6,9 @@ export default class CarouselItem extends React.Component {
       return this.props.images.hits.map((image, index) => {
         return (
           <li key={image.id} className='carousel-seat'>
-            <div className="test">
+            <div className="details">
               <img src={image.previewURL} alt={image.tags} />
+              <p>{image.tags}</p>
             </div>
           </li>
         );

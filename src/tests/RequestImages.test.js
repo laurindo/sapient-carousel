@@ -38,7 +38,7 @@ describe("Testing <Carousel /> and <CarouselItem />", async () => {
     // Checking if attribute img has alt='river, hills, evening'
     const imgElement = getByAltText(/river, hills, evening/i)
 
-    // Checking if <img /> was returned
+    // Checking if element <img /> was returned
     expect(imgElement).toBeTruthy();
   });
 });

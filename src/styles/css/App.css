@@ -4,8 +4,7 @@
   overflow: hidden;
   margin: 10px;
 }
-
-.carousel {
+.wrap .carousel {
   display: flex;
   left: -100%;
   list-style: none;
@@ -14,52 +13,44 @@
   position: relative;
   transform: translateX(100%);
 }
-
-.carousel.is-reversing {
+.wrap .carousel.is-reversing {
   transform: translateX(-100%);
 }
-
-.carousel.is-set {
+.wrap .carousel.is-set {
   transform: none;
   transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
-
-.carousel-seat {
-  background: #ddd;
+.wrap .carousel .carousel-seat {
   flex: 1 0 100%;
   order: 2;
   position: relative;
   display: block;
 }
-
-.test {
+.wrap .carousel .carousel-seat.is-ref {
+  order: 1;
+}
+.wrap .carousel .carousel-seat .details {
   cursor: pointer;
   overflow: hidden;
   position: relative;
   width: 100%;
 }
-
-.carousel-seat:nth-child(even) {
-  background: #d5d5d5;
-}
-
-.carousel-seat.is-ref {
-  order: 1;
-}
-
-.carousel-seat img {
+.wrap .carousel .carousel-seat .details img {
   display: block;
   z-index: 1;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+.wrap .carousel .carousel-seat .details p {
+  color: #069;
+}
 
+/* CAROUSEL CONTROLS */
 .controls {
   padding: 2em;
   text-align: center;
 }
-
 .controls button {
   background: #2c73a1;
   border: 0;
@@ -68,19 +59,17 @@
   margin: 0 2px;
   font-weight: bold;
 }
-
 .controls button.prev {
   border-radius: 5px 0 0 5px;
 }
-
 .controls button.next {
   border-radius: 0 5px 5px 0;
 }
-
 .controls button:hover, .controls button:focus {
-  background: magenta;
+  background: #0051ff;
 }
 
+/* MEDIA QUERIES */
 @media (min-width: 30em) {
   .carousel {
     left: -50%;
@@ -128,20 +117,43 @@
   }
 }
 @media (max-width: 320px) {
-  button.prev {
+  /* EXTENDS */
+  .controls button.next, .controls button.prev {
+    border-radius: 100px;
+  }
+
+  button.next, button.prev {
+    height: 135px;
+    width: 135px;
+    background-repeat: no-repeat;
     position: absolute;
-    top: 10px;
-    left: 5px;
+    top: 82px;
+    background-image: url(../../images/arrow.svg);
+    background-color: #ffffff;
+    text-indent: -9999px;
+    white-space: nowrap;
+    background-position-x: 18px;
+    background-position-y: 33px;
+    opacity: 0.7;
+  }
+
+  button.prev {
+    transform: rotate(180deg);
+    left: -69px;
+    background-position-x: 25px;
+    background-position-y: 42px;
   }
 
   button.next {
-    position: absolute;
-    top: 10px;
-    right: 5px;
+    right: -76px;
   }
 }
 body {
+  margin: 0;
+  padding: 0;
   font-family: "Ropa Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 header {
@@ -155,7 +167,7 @@ h2 {
 }
 
 .loading {
-  color: red;
+  color: #069;
 }
 
 /*# sourceMappingURL=App.css.map */
