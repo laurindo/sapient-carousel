@@ -4,19 +4,20 @@
   overflow: hidden;
   width: 100%;
   margin: 30px 0;
+  background-color: #fff;
 }
 .container .carousel-container {
   position: relative;
   max-width: 150px;
   margin: 10px auto;
-  height: 270px;
+  height: 200px;
 }
 .container .carousel-container:after {
   content: "";
   display: block;
   width: 100%;
-  height: 250px;
-  outline: 2px solid #9dc9ea;
+  height: 170px;
+  border-bottom: 2px solid #9dc9ea;
   position: absolute;
   top: 0;
   left: 0;
@@ -69,16 +70,53 @@
 .controls button.next {
   border-radius: 0 5px 5px 0;
 }
-.controls button:hover, .controls button:focus {
+.controls button:hover {
   background: #0051ff;
 }
 
+@media (max-width: 768px) {
+  /* EXTENDS */
+  .controls button.prev, .controls button.next {
+    border-radius: 100px;
+  }
+
+  .controls button.prev:hover, .controls button.next:hover, button.next, button.prev {
+    height: 135px;
+    width: 135px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 140px;
+    background-image: url(../../images/arrow.svg);
+    background-color: #ffffff;
+    text-indent: -9999px;
+    white-space: nowrap;
+    background-position-x: 18px;
+    background-position-y: 33px;
+    opacity: 0.7;
+  }
+
+  .controls button.prev:hover, button.prev {
+    transform: rotate(180deg);
+    left: -69px;
+    background-position-x: 25px;
+    background-position-y: 42px;
+  }
+
+  .parent {
+    padding: 0 !important;
+  }
+
+  button.next {
+    right: -76px;
+  }
+}
 body {
   margin: 0;
   padding: 0;
   font-family: "Ropa Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #e9eee6;
 }
 
 .parent {
@@ -86,7 +124,7 @@ body {
 }
 
 header {
-  padding: 15px 10px;
+  padding: 25px;
   background-color: #e9eee6;
 }
 
@@ -97,13 +135,16 @@ h2 {
 
 .loading {
   color: #069;
+  text-align: center;
+  margin: 0 auto;
+  width: 150px;
 }
 
 .truncate {
-  width: 150px;
+  width: 140px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/*# sourceMappingURL=App.css.map */
+/*# sourceMappingURL=app.css.map */

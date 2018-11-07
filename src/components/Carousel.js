@@ -4,6 +4,8 @@ import CarouselUtil from '../utils/carousel-util';
 import CarouselItem from './CarouselItem';
 import LeftButton from './LeftButton';
 import RightButton from './RightButton';
+import Loading from './Loading';
+import iconLoading from '../images/ripple.svg';
 
 export default class Carousel extends React.Component {
   constructor(props) {
@@ -39,19 +41,44 @@ export default class Carousel extends React.Component {
     }
   }
 
+  getTargetToMiddle() {
+    const { images } = this.state;
+    return this.CarouselUtil.moveTargetToMiddle(images);
+  }
+
   goToNextSlide() {
-    const newIndex = this.state.indexImage + 1;
+    const { indexImage, images } = this.state;
+    const newIndex = indexImage + 1;
+    const targetMiddleIndex = this.getTargetToMiddle();
+
+    if (this.CarouselUtil.checkMoveLimit(indexImage, images)) {
+      return this.setState({
+        indexImage: targetMiddleIndex,
+        currentImage: images[targetMiddleIndex]
+      });
+    }
+
     this.setState({
       indexImage: newIndex,
-      currentImage: this.state.images[newIndex]
+      currentImage: images[newIndex]
     });
   }
 
   goToPrevSlide() {
-    const newIndex = this.state.indexImage - 1;
+    const { indexImage, images } = this.state;
+    const newIndex = indexImage - 1;
+    const targetMiddleIndex = this.getTargetToMiddle();
+
+    if (this.CarouselUtil.checkMoveStart(indexImage)) {
+      return this.setState({
+        indexImage: targetMiddleIndex,
+        currentImage: images[targetMiddleIndex]
+      });
+    }
+
     this.setState({
       indexImage: newIndex,
-      currentImage: this.state.images[newIndex]
+      currentImage: images[newIndex]
     });
   }
 
@@ -67,11 +94,12 @@ export default class Carousel extends React.Component {
         <div className="container">
           <div id={`wrap-${indexImage}`} className='carousel-container'>
             <div className="carousel-wrapper" style={{'transform': this.moveImage(indexImage, images)}}>
+              {(images.length === 0) ? <Loading><img src={iconLoading} alt="loading..." /></Loading> : null}
               {images.map(image => <CarouselItem key={image.id} image={image} />)}
             </div>
           </div>
-
-          <div className='controls'>
+        </div>
+        <div className='controls'>
             <LeftButton
             title="Prev"
             disabled={indexImage === 0}
@@ -81,7 +109,6 @@ export default class Carousel extends React.Component {
             title="Next"
             disabled={indexImage === images.length-1}
             goToNextSlide={() => this.goToNextSlide(indexImage)} />
-          </div>
           </div>
       </div>
     )

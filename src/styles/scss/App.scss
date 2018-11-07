@@ -1,5 +1,6 @@
-@import "./Global.scss";
-@import "./Carousel-v2.scss";
+@import "./global.scss";
+@import "./carousel.scss";
+@import "./mobile-carousel.scss";
 
 body {
   margin: 0;
@@ -7,6 +8,7 @@ body {
   font-family: $font-family;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: $gray-color;
 }
 
 .parent {
@@ -14,7 +16,7 @@ body {
 }
 
 header {
-  padding: 15px 10px;
+  padding: 25px;
   background-color: $gray-color;
 }
 
@@ -25,10 +27,13 @@ h2 {
 
 .loading {
   color: $primary-color;
+  text-align: center;
+  margin: 0 auto;
+  width: 150px;
 }
 
 .truncate {
-  width: 150px;
+  width: 140px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

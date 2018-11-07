@@ -1,0 +1,54 @@
+@media (max-width: 768px) {
+  /* EXTENDS */
+  %border_btn_rounded {
+    border-radius: 100px;
+  }
+  %arrow_test {
+    height: 135px;
+    width: 135px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 140px;
+    background-image: url(../../images/arrow.svg);
+    background-color: #ffffff;
+    text-indent: -9999px;
+    white-space: nowrap;
+    background-position-x: 18px;
+    background-position-y: 33px;
+    opacity: 0.7;
+  }
+
+  %btn_left_props {
+    transform: rotate(180deg);
+    left: -69px;
+    background-position-x: 25px;
+    background-position-y: 42px;
+  }
+
+  .parent { padding: 0!important; }
+
+  button.prev {
+    @extend %btn_left_props;
+    @extend %arrow_test;
+  }
+
+  button.next {
+    right: -76px;
+    @extend %arrow_test;
+  }
+
+  .controls button.next {
+    @extend %border_btn_rounded;
+    &:hover {
+      @extend %arrow_test;
+    }
+  }
+
+  .controls button.prev {
+    @extend %border_btn_rounded;
+    &:hover {
+      @extend %arrow_test;
+      @extend %btn_left_props;
+    }
+  }
+}

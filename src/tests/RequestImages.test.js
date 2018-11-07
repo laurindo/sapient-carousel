@@ -30,13 +30,13 @@ describe("Testing <Carousel /> and <CarouselItem />", async () => {
     } = render(<Carousel />);
 
     // Before to do request
-    expect(queryByText('loading...')).toBeTruthy();
+    expect(getByAltText(/loading.../i)).toBeTruthy();
 
     // After request has done
     await wait(() => expect(queryByText('loading...')).toBeNull());
 
     // Checking if attribute img has alt='river, hills, evening'
-    const imgElement = getByAltText(/river, hills, evening/i)
+    const imgElement = getByAltText(/river, hills, evening/i);
 
     // Checking if element <img /> was returned
     expect(imgElement).toBeTruthy();
