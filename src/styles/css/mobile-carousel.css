@@ -1,0 +1,38 @@
+@media (max-width: 768px) {
+  /* EXTENDS */
+  .controls button.prev, .controls button.next {
+    border-radius: 100px;
+  }
+
+  .controls button.prev:hover, .controls button.next:hover, button.next, button.prev {
+    height: 135px;
+    width: 135px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 140px;
+    background-image: url(../../images/arrow.svg);
+    background-color: #ffffff;
+    text-indent: -9999px;
+    white-space: nowrap;
+    background-position-x: 18px;
+    background-position-y: 33px;
+    opacity: 0.7;
+  }
+
+  .controls button.prev:hover, button.prev {
+    transform: rotate(180deg);
+    left: -69px;
+    background-position-x: 25px;
+    background-position-y: 42px;
+  }
+
+  .parent {
+    padding: 0 !important;
+  }
+
+  button.next {
+    right: -76px;
+  }
+}
+
+/*# sourceMappingURL=mobile-carousel.css.map */

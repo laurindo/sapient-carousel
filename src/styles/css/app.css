@@ -1,0 +1,557 @@
+/* FONT FAMILY */
+/* COLORS */
+.container {
+  overflow: hidden;
+  width: 100%;
+  margin: 30px 0;
+  background-color: #fff;
+}
+.container .carousel-container {
+  position: relative;
+  max-width: 150px;
+  margin: 10px auto;
+  height: 200px;
+}
+.container .carousel-container:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 170px;
+  border-bottom: 2px solid #9dc9ea;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.container .carousel-container .carousel-wrapper {
+  display: flex;
+  position: absolute;
+  transition: transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.container .carousel-container .carousel-wrapper .details {
+  flex: 1;
+  min-width: 160px;
+  opacity: 0.4;
+  transition: opacity 300ms linear;
+}
+.container .carousel-container .carousel-wrapper .details .container-img {
+  min-height: 110px;
+}
+.container .carousel-container .carousel-wrapper .details .container-title {
+  padding: 5px;
+}
+.container .carousel-container .carousel-wrapper .details .container-title label {
+  color: #e9eee6;
+}
+.container .carousel-container .carousel-wrapper .details .container-title p {
+  margin: 0;
+  color: #069;
+}
+.container .carousel-container .carousel-wrapper .details .container-title .metrics {
+  margin: 15px 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+/* LOOP to opacity image */
+.carousel-container.active-0 #detail-0 {
+  opacity: 1;
+}
+
+.carousel-container.active-1 #detail-1 {
+  opacity: 1;
+}
+
+.carousel-container.active-2 #detail-2 {
+  opacity: 1;
+}
+
+.carousel-container.active-3 #detail-3 {
+  opacity: 1;
+}
+
+.carousel-container.active-4 #detail-4 {
+  opacity: 1;
+}
+
+.carousel-container.active-5 #detail-5 {
+  opacity: 1;
+}
+
+.carousel-container.active-6 #detail-6 {
+  opacity: 1;
+}
+
+.carousel-container.active-7 #detail-7 {
+  opacity: 1;
+}
+
+.carousel-container.active-8 #detail-8 {
+  opacity: 1;
+}
+
+.carousel-container.active-9 #detail-9 {
+  opacity: 1;
+}
+
+.carousel-container.active-10 #detail-10 {
+  opacity: 1;
+}
+
+.carousel-container.active-11 #detail-11 {
+  opacity: 1;
+}
+
+.carousel-container.active-12 #detail-12 {
+  opacity: 1;
+}
+
+.carousel-container.active-13 #detail-13 {
+  opacity: 1;
+}
+
+.carousel-container.active-14 #detail-14 {
+  opacity: 1;
+}
+
+.carousel-container.active-15 #detail-15 {
+  opacity: 1;
+}
+
+.carousel-container.active-16 #detail-16 {
+  opacity: 1;
+}
+
+.carousel-container.active-17 #detail-17 {
+  opacity: 1;
+}
+
+.carousel-container.active-18 #detail-18 {
+  opacity: 1;
+}
+
+.carousel-container.active-19 #detail-19 {
+  opacity: 1;
+}
+
+.carousel-container.active-20 #detail-20 {
+  opacity: 1;
+}
+
+.carousel-container.active-21 #detail-21 {
+  opacity: 1;
+}
+
+.carousel-container.active-22 #detail-22 {
+  opacity: 1;
+}
+
+.carousel-container.active-23 #detail-23 {
+  opacity: 1;
+}
+
+.carousel-container.active-24 #detail-24 {
+  opacity: 1;
+}
+
+.carousel-container.active-25 #detail-25 {
+  opacity: 1;
+}
+
+.carousel-container.active-26 #detail-26 {
+  opacity: 1;
+}
+
+.carousel-container.active-27 #detail-27 {
+  opacity: 1;
+}
+
+.carousel-container.active-28 #detail-28 {
+  opacity: 1;
+}
+
+.carousel-container.active-29 #detail-29 {
+  opacity: 1;
+}
+
+.carousel-container.active-30 #detail-30 {
+  opacity: 1;
+}
+
+.carousel-container.active-31 #detail-31 {
+  opacity: 1;
+}
+
+.carousel-container.active-32 #detail-32 {
+  opacity: 1;
+}
+
+.carousel-container.active-33 #detail-33 {
+  opacity: 1;
+}
+
+.carousel-container.active-34 #detail-34 {
+  opacity: 1;
+}
+
+.carousel-container.active-35 #detail-35 {
+  opacity: 1;
+}
+
+.carousel-container.active-36 #detail-36 {
+  opacity: 1;
+}
+
+.carousel-container.active-37 #detail-37 {
+  opacity: 1;
+}
+
+.carousel-container.active-38 #detail-38 {
+  opacity: 1;
+}
+
+.carousel-container.active-39 #detail-39 {
+  opacity: 1;
+}
+
+.carousel-container.active-40 #detail-40 {
+  opacity: 1;
+}
+
+.carousel-container.active-41 #detail-41 {
+  opacity: 1;
+}
+
+.carousel-container.active-42 #detail-42 {
+  opacity: 1;
+}
+
+.carousel-container.active-43 #detail-43 {
+  opacity: 1;
+}
+
+.carousel-container.active-44 #detail-44 {
+  opacity: 1;
+}
+
+.carousel-container.active-45 #detail-45 {
+  opacity: 1;
+}
+
+.carousel-container.active-46 #detail-46 {
+  opacity: 1;
+}
+
+.carousel-container.active-47 #detail-47 {
+  opacity: 1;
+}
+
+.carousel-container.active-48 #detail-48 {
+  opacity: 1;
+}
+
+.carousel-container.active-49 #detail-49 {
+  opacity: 1;
+}
+
+.carousel-container.active-50 #detail-50 {
+  opacity: 1;
+}
+
+.carousel-container.active-51 #detail-51 {
+  opacity: 1;
+}
+
+.carousel-container.active-52 #detail-52 {
+  opacity: 1;
+}
+
+.carousel-container.active-53 #detail-53 {
+  opacity: 1;
+}
+
+.carousel-container.active-54 #detail-54 {
+  opacity: 1;
+}
+
+.carousel-container.active-55 #detail-55 {
+  opacity: 1;
+}
+
+.carousel-container.active-56 #detail-56 {
+  opacity: 1;
+}
+
+.carousel-container.active-57 #detail-57 {
+  opacity: 1;
+}
+
+.carousel-container.active-58 #detail-58 {
+  opacity: 1;
+}
+
+.carousel-container.active-59 #detail-59 {
+  opacity: 1;
+}
+
+.carousel-container.active-60 #detail-60 {
+  opacity: 1;
+}
+
+.carousel-container.active-61 #detail-61 {
+  opacity: 1;
+}
+
+.carousel-container.active-62 #detail-62 {
+  opacity: 1;
+}
+
+.carousel-container.active-63 #detail-63 {
+  opacity: 1;
+}
+
+.carousel-container.active-64 #detail-64 {
+  opacity: 1;
+}
+
+.carousel-container.active-65 #detail-65 {
+  opacity: 1;
+}
+
+.carousel-container.active-66 #detail-66 {
+  opacity: 1;
+}
+
+.carousel-container.active-67 #detail-67 {
+  opacity: 1;
+}
+
+.carousel-container.active-68 #detail-68 {
+  opacity: 1;
+}
+
+.carousel-container.active-69 #detail-69 {
+  opacity: 1;
+}
+
+.carousel-container.active-70 #detail-70 {
+  opacity: 1;
+}
+
+.carousel-container.active-71 #detail-71 {
+  opacity: 1;
+}
+
+.carousel-container.active-72 #detail-72 {
+  opacity: 1;
+}
+
+.carousel-container.active-73 #detail-73 {
+  opacity: 1;
+}
+
+.carousel-container.active-74 #detail-74 {
+  opacity: 1;
+}
+
+.carousel-container.active-75 #detail-75 {
+  opacity: 1;
+}
+
+.carousel-container.active-76 #detail-76 {
+  opacity: 1;
+}
+
+.carousel-container.active-77 #detail-77 {
+  opacity: 1;
+}
+
+.carousel-container.active-78 #detail-78 {
+  opacity: 1;
+}
+
+.carousel-container.active-79 #detail-79 {
+  opacity: 1;
+}
+
+.carousel-container.active-80 #detail-80 {
+  opacity: 1;
+}
+
+.carousel-container.active-81 #detail-81 {
+  opacity: 1;
+}
+
+.carousel-container.active-82 #detail-82 {
+  opacity: 1;
+}
+
+.carousel-container.active-83 #detail-83 {
+  opacity: 1;
+}
+
+.carousel-container.active-84 #detail-84 {
+  opacity: 1;
+}
+
+.carousel-container.active-85 #detail-85 {
+  opacity: 1;
+}
+
+.carousel-container.active-86 #detail-86 {
+  opacity: 1;
+}
+
+.carousel-container.active-87 #detail-87 {
+  opacity: 1;
+}
+
+.carousel-container.active-88 #detail-88 {
+  opacity: 1;
+}
+
+.carousel-container.active-89 #detail-89 {
+  opacity: 1;
+}
+
+.carousel-container.active-90 #detail-90 {
+  opacity: 1;
+}
+
+.carousel-container.active-91 #detail-91 {
+  opacity: 1;
+}
+
+.carousel-container.active-92 #detail-92 {
+  opacity: 1;
+}
+
+.carousel-container.active-93 #detail-93 {
+  opacity: 1;
+}
+
+.carousel-container.active-94 #detail-94 {
+  opacity: 1;
+}
+
+.carousel-container.active-95 #detail-95 {
+  opacity: 1;
+}
+
+.carousel-container.active-96 #detail-96 {
+  opacity: 1;
+}
+
+.carousel-container.active-97 #detail-97 {
+  opacity: 1;
+}
+
+.carousel-container.active-98 #detail-98 {
+  opacity: 1;
+}
+
+.carousel-container.active-99 #detail-99 {
+  opacity: 1;
+}
+
+.carousel-container.active-100 #detail-100 {
+  opacity: 1;
+}
+
+/* CAROUSEL CONTROLS */
+.controls {
+  padding: 2em;
+  text-align: center;
+}
+.controls button {
+  background: #2c73a1;
+  border: 0;
+  color: #eee;
+  padding: 0.5em 1em;
+  margin: 0 2px;
+  font-weight: bold;
+}
+.controls button.prev {
+  border-radius: 5px 0 0 5px;
+}
+.controls button.next {
+  border-radius: 0 5px 5px 0;
+}
+.controls button:hover {
+  background: #0051ff;
+}
+
+@media (max-width: 768px) {
+  /* EXTENDS */
+  .controls button.prev, .controls button.next {
+    border-radius: 100px;
+  }
+
+  .controls button.prev:hover, .controls button.next:hover, button.next, button.prev {
+    height: 135px;
+    width: 135px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 140px;
+    background-image: url(../../images/arrow.svg);
+    background-color: #ffffff;
+    text-indent: -9999px;
+    white-space: nowrap;
+    background-position-x: 18px;
+    background-position-y: 33px;
+    opacity: 0.7;
+  }
+
+  .controls button.prev:hover, button.prev {
+    transform: rotate(180deg);
+    left: -69px;
+    background-position-x: 25px;
+    background-position-y: 42px;
+  }
+
+  .parent {
+    padding: 0 !important;
+  }
+
+  button.next {
+    right: -76px;
+  }
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Ropa Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #e9eee6;
+}
+
+.parent {
+  padding: 20px;
+}
+
+header {
+  padding: 25px;
+  background-color: #e9eee6;
+}
+
+h2 {
+  color: #069;
+  margin: 0;
+}
+
+.loading {
+  color: #069;
+  text-align: center;
+  margin: 0 auto;
+  width: 150px;
+}
+
+.truncate {
+  width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*# sourceMappingURL=app.css.map */

@@ -1,0 +1,40 @@
+@import "./global.scss";
+@import "./carousel.scss";
+@import "./mobile-carousel.scss";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-family;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $gray-color;
+}
+
+.parent {
+  padding: 20px;
+}
+
+header {
+  padding: 25px;
+  background-color: $gray-color;
+}
+
+h2 {
+  color: $primary-color;
+  margin: 0;
+}
+
+.loading {
+  color: $primary-color;
+  text-align: center;
+  margin: 0 auto;
+  width: 150px;
+}
+
+.truncate {
+  width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
