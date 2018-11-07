@@ -1,10 +1,21 @@
 import axios from 'axios';
+import Constants from '../constants/general-constant';
 
 export default class HttpUtil {
-  constructor() {
-    this.BASE_URL = `https://pixabay.com/api/?key=9656065-a4094594c34f9ac14c7fc4c39`;
+  constructor(BASE_URL = Constants.URI_PIXABAY) {
+    this.BASE_URL = this.defineAPI(BASE_URL);
   }
-  getImages(query = 'beautiful+landscape') {
-    return axios.get(`${this.BASE_URL}&q=${query}&image_type=photo`);
+
+  defineAPI(BASE_URL, env = 'dev') {
+    let env_name = Constants.environments[env];
+    const API_KEY_PIXABAY = Constants.API[env_name].API_KEY;
+    return `${BASE_URL}/?key=${API_KEY_PIXABAY}`;
+  }
+
+  getImages(query, specificAPI) {
+    if (query) {
+      return axios.get(`${this.BASE_URL}&q=${query}&image_type=photo`);
+    }
+    return axios.get(specificAPI);
   }
 }

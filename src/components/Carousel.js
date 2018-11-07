@@ -41,6 +41,13 @@ export default class Carousel extends React.Component {
     }
   }
 
+  changeStateToMoveImage(newIndex, images = []) {
+    this.setState(prevState => ({
+      indexImage: newIndex,
+      currentImage: images[newIndex]
+    }));
+  }
+
   getTargetToMiddle() {
     const { images } = this.state;
     return this.CarouselUtil.moveTargetToMiddle(images);
@@ -52,34 +59,22 @@ export default class Carousel extends React.Component {
     const targetMiddleIndex = this.getTargetToMiddle();
 
     if (this.CarouselUtil.checkMoveLimit(indexImage, images)) {
-      return this.setState({
-        indexImage: targetMiddleIndex,
-        currentImage: images[targetMiddleIndex]
-      });
+      return this.changeStateToMoveImage(targetMiddleIndex, images);
     }
 
-    this.setState({
-      indexImage: newIndex,
-      currentImage: images[newIndex]
-    });
+    this.changeStateToMoveImage(newIndex, images);
   }
 
   goToPrevSlide() {
-    const { indexImage, images } = this.state;
+    const { indexImage } = this.state;
     const newIndex = indexImage - 1;
     const targetMiddleIndex = this.getTargetToMiddle();
 
     if (this.CarouselUtil.checkMoveStart(indexImage)) {
-      return this.setState({
-        indexImage: targetMiddleIndex,
-        currentImage: images[targetMiddleIndex]
-      });
+      return this.changeStateToMoveImage(targetMiddleIndex);
     }
 
-    this.setState({
-      indexImage: newIndex,
-      currentImage: images[newIndex]
-    });
+    this.changeStateToMoveImage(newIndex);
   }
 
   moveImage(index, images) {
