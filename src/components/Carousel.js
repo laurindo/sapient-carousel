@@ -24,6 +24,7 @@ export default class Carousel extends React.Component {
         this.setState({
           images: result.data.hits,
           currentImage: result.data.hits[0],
+          indexImage: Math.floor(result.data.hits.length / 2),
           showError: false
         });
       }).catch(error => {
@@ -54,28 +55,34 @@ export default class Carousel extends React.Component {
     });
   }
 
+  moveImage(index, images) {
+    const newPosition = this.CarouselUtil.move(index, images);
+    return this.CarouselUtil.getTranslatePosition(newPosition);
+  }
+
   render () {
-    const { images, currentImage, indexImage } = this.state;
+    const { images, indexImage } = this.state;
     return (
-      <div>
-
-        <div id={`wrap-${indexImage}`} className='carousel-container'>
-          <div className="carousel-wrapper">
-            <CarouselItem image={currentImage} />
+      <div className="parent">
+        <div className="container">
+          <div id={`wrap-${indexImage}`} className='carousel-container'>
+            <div className="carousel-wrapper" style={{'transform': this.moveImage(indexImage, images)}}>
+              {images.map(image => <CarouselItem key={image.id} image={image} />)}
+            </div>
           </div>
-        </div>
 
-        <div className='controls'>
-          <LeftButton
+          <div className='controls'>
+            <LeftButton
             title="Prev"
             disabled={indexImage === 0}
             goToPrevSlide={() => this.goToPrevSlide() } />
 
-          <RightButton
+            <RightButton
             title="Next"
             disabled={indexImage === images.length-1}
             goToNextSlide={() => this.goToNextSlide(indexImage)} />
-        </div>
+          </div>
+          </div>
       </div>
     )
   }

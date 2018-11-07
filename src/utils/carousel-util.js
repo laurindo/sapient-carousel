@@ -5,14 +5,23 @@ export default class CarouselUtil {
   }
 
   /**
-   * Distance is an intenger that represents the position desired in carousel
-   * @param {integer} distance
+   * Index is an intenger that represents the position desired in carousel
+   * @param {integer} index
+   * @param {array} images
+   * @example output
+   * 10, 15, etc
   */
-  move(distance) {
-    let size = this.items.length;
-    let newDistance = distance % size;
-    let newIndex = (this.index + newDistance + size) % size;
-    this.index = newIndex;
-    return this.size[this.index];
+  move(index, images) {
+    return index * (100 / images.length);
+  }
+
+  /**
+   * Receives a newPosition to move image
+   * @param {integer} newPosition
+   * @example output
+   * translateX(-10%)
+  */
+  getTranslatePosition(newPosition) {
+    return `translateX(-${newPosition}%)`;
   }
 }

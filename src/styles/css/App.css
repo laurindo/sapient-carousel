@@ -1,49 +1,53 @@
 /* FONT FAMILY */
 /* COLORS */
-.wrap {
+.container {
   overflow: hidden;
-  margin: 10px;
+  width: 100%;
+  margin: 30px 0;
 }
-.wrap .carousel {
+.container .carousel-container {
+  position: relative;
+  max-width: 150px;
+  margin: 10px auto;
+  height: 270px;
+}
+.container .carousel-container:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 250px;
+  outline: 2px solid #9dc9ea;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.container .carousel-container .carousel-wrapper {
   display: flex;
-  left: -100%;
-  list-style: none;
+  position: absolute;
+  transition: transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.container .carousel-container .carousel-wrapper .details {
+  flex: 1;
+  min-width: 160px;
+}
+.container .carousel-container .carousel-wrapper .details .container-img {
+  min-height: 110px;
+}
+.container .carousel-container .carousel-wrapper .details .container-title {
+  padding: 5px;
+}
+.container .carousel-container .carousel-wrapper .details .container-title label {
+  color: #e9eee6;
+}
+.container .carousel-container .carousel-wrapper .details .container-title p {
   margin: 0;
-  padding: 0;
-  position: relative;
-  transform: translateX(100%);
-}
-.wrap .carousel.is-reversing {
-  transform: translateX(-100%);
-}
-.wrap .carousel.is-set {
-  transform: none;
-  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-}
-.wrap .carousel .carousel-seat {
-  flex: 1 0 100%;
-  order: 2;
-  position: relative;
-  display: block;
-}
-.wrap .carousel .carousel-seat.is-ref {
-  order: 1;
-}
-.wrap .carousel .carousel-seat .details {
-  cursor: pointer;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-}
-.wrap .carousel .carousel-seat .details img {
-  display: block;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.wrap .carousel .carousel-seat .details p {
   color: #069;
+}
+.container .carousel-container .carousel-wrapper .details .container-title .metrics {
+  margin: 15px 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 /* CAROUSEL CONTROLS */
@@ -69,91 +73,16 @@
   background: #0051ff;
 }
 
-/* MEDIA QUERIES */
-@media (min-width: 30em) {
-  .carousel {
-    left: -50%;
-    transform: translateX(50%);
-  }
-}
-@media (min-width: 40em) {
-  .carousel {
-    left: -20.7777%;
-    transform: translateX(-20.7777%);
-  }
-}
-@media (min-width: 30em) {
-  .carousel.is-reversing {
-    transform: translateX(-50%);
-  }
-}
-@media (min-width: 40em) {
-  .carousel.is-reversing {
-    transform: translateX(-33.33333%);
-  }
-}
-@media (min-width: 30em) {
-  .carousel-seat {
-    flex-basis: 48.3333%;
-    padding: 5px;
-  }
-}
-@media (min-width: 40em) {
-  .carousel-seat {
-    flex-basis: 19%;
-    padding: 5px;
-  }
-}
-@media (min-width: 50em) {
-  .carousel-seat {
-    flex-basis: 32.3333%;
-    padding: 5px;
-  }
-}
-@media (min-width: 60em) {
-  .carousel-seat {
-    flex-basis: 32.5555%;
-    padding: 5px;
-  }
-}
-@media (max-width: 320px) {
-  /* EXTENDS */
-  .controls button.next, .controls button.prev {
-    border-radius: 100px;
-  }
-
-  button.next, button.prev {
-    height: 135px;
-    width: 135px;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 82px;
-    background-image: url(../../images/arrow.svg);
-    background-color: #ffffff;
-    text-indent: -9999px;
-    white-space: nowrap;
-    background-position-x: 18px;
-    background-position-y: 33px;
-    opacity: 0.7;
-  }
-
-  button.prev {
-    transform: rotate(180deg);
-    left: -69px;
-    background-position-x: 25px;
-    background-position-y: 42px;
-  }
-
-  button.next {
-    right: -76px;
-  }
-}
 body {
   margin: 0;
   padding: 0;
   font-family: "Ropa Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.parent {
+  padding: 20px;
 }
 
 header {
@@ -168,6 +97,13 @@ h2 {
 
 .loading {
   color: #069;
+}
+
+.truncate {
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /*# sourceMappingURL=App.css.map */

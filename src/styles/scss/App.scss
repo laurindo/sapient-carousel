@@ -1,5 +1,5 @@
 @import "./Global.scss";
-@import "./Carousel.scss";
+@import "./Carousel-v2.scss";
 
 body {
   margin: 0;
@@ -7,6 +7,10 @@ body {
   font-family: $font-family;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.parent {
+  padding: 20px;
 }
 
 header {
@@ -21,4 +25,11 @@ h2 {
 
 .loading {
   color: $primary-color;
+}
+
+.truncate {
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
