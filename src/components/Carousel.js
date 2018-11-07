@@ -2,8 +2,7 @@ import React from 'react';
 import HttpUtil from '../utils/http-util';
 import CarouselUtil from '../utils/carousel-util';
 import CarouselItem from './CarouselItem';
-import LeftButton from './LeftButton';
-import RightButton from './RightButton';
+import Button from './Button';
 import Loading from './Loading';
 import iconLoading from '../images/ripple.svg';
 
@@ -95,15 +94,15 @@ export default class Carousel extends React.Component {
           </div>
         </div>
         <div className='controls'>
-            <LeftButton
-            title="Prev"
-            disabled={indexImage === 0}
-            goToPrevSlide={() => this.goToPrevSlide() } />
+            <Button
+              title="Prev"
+              type="prev"
+              onclick={() => this.goToPrevSlide() } />
 
-            <RightButton
-            title="Next"
-            disabled={indexImage === images.length-1}
-            goToNextSlide={() => this.goToNextSlide(indexImage)} />
+            <Button
+              title="Next"
+              type="next"
+              onclick={() => this.goToNextSlide(indexImage)} />
           </div>
       </div>
     )
