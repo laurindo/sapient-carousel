@@ -87,10 +87,10 @@ export default class Carousel extends React.Component {
     return (
       <div className="parent">
         <div className="container">
-          <div id={`wrap-${indexImage}`} className='carousel-container'>
+          <div id={`wrap-${indexImage}`} className={`carousel-container active-${indexImage}`}>
             <div className="carousel-wrapper" style={{'transform': this.moveImage(indexImage, images)}}>
               {(images.length === 0) ? <Loading><img src={iconLoading} alt="loading..." /></Loading> : null}
-              {images.map(image => <CarouselItem key={image.id} image={image} />)}
+              {images.map((image, index) => <CarouselItem indexImage={index} key={image.id} image={image} />)}
             </div>
           </div>
         </div>

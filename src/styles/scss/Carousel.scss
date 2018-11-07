@@ -26,6 +26,8 @@
       .details {
         flex: 1;
         min-width: 160px;
+        opacity: 0.4;
+        transition: opacity 300ms linear;
         .container-img {
           min-height: 110px;
         }
@@ -47,6 +49,14 @@
         }
       }
     }
+  }
+}
+
+/* LOOP to opacity image */
+$i: 0;
+@for $i from 0 through 100 {
+  .carousel-container.active-#{$i} #detail-#{$i} {
+    opacity: 1;
   }
 }
 
